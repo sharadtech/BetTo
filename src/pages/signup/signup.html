@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      {{ 'SIGNUP_INTRO' | translate }}
+    </div>
+  </div>
+
+    <ion-list>
+      <form (submit)="doSignup()">
+        <ion-item>
+          <ion-label fixed>{{ 'SIGNUP_EMAIL' | translate }}</ion-label>
+          <ion-input type="email" [(ngModel)]="account.email" name="email" placeholder="{{'SIGNUP_EMAIL_PLACEHOLDER' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'SIGNUP_PASSWORD' | translate }}</ion-label>
+          <ion-input type="password" [(ngModel)]="account.password" name="password" placeholder="{{'SIGNUP_PASSWORD_PLACEHOLDER' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'SIGNUP_FIRSTNAME' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.firstname" name="firstname" placeholder="{{'SIGNUP_FIRSTNAME_PLACEHOLDER' | translate}}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'SIGNUP_LASTNAME' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.lastname" name="lastname" placeholder="{{'SIGNUP_LASTNAME_PLACEHOLDER' | translate}}"></ion-input>
+        </ion-item>
+
+        <div padding>
+          <button ion-button color="primary" block>{{ 'SIGNUP_BUTTON' | translate }}</button>
+        </div>
+      </form>
+
+      <div class="separator">
+        <h2>{{ 'LOGIN_OR_SIGNUP' | translate }}</h2>
+      </div>
+      <div padding>
+        <button ion-button block (click)="goBackToLogin()">{{ 'LOGIN_BUTTON' | translate }}</button>
+      </div>
+
+    </ion-list>
+
+</ion-content>

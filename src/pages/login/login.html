@@ -1,0 +1,51 @@
+<ion-content>
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+    <div class="splash-logo"></div>
+    <div class="splash-intro">
+      {{ 'LOGIN_INTRO' | translate }}
+    </div>
+  </div>
+
+    <ion-list>
+      <form (submit)="doLogin()">
+        <ion-item>
+          <ion-label fixed>{{ 'LOGIN_EMAIL' | translate }}</ion-label>
+          <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>{{ 'LOGIN_PASSWORD' | translate }}</ion-label>
+          <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        </ion-item>
+
+        <div padding>
+          <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+        </div>
+      </form>
+      <ion-item>
+        <ion-grid class="absolute-center">
+          <ion-row text-center>
+            <ion-col>
+              <button ion-button round (click)="doLogin()"><ion-icon name="logo-facebook"></ion-icon></button>
+            </ion-col>
+            <ion-col>
+              <button ion-button round (click)="doLogin()"><ion-icon name="logo-twitter"></ion-icon></button>
+            </ion-col>
+            <ion-col>
+              <button ion-button round (click)="doLogin()"><ion-icon name="logo-google"></ion-icon></button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <div class="separator">
+        <h2>{{ 'LOGIN_OR_SIGNUP' | translate }}</h2>
+      </div>
+      <div padding>
+        <button ion-button block (click)="signup()">{{ 'LOGIN_SIGNUP' | translate }}</button>
+      </div>
+
+    </ion-list>
+
+</ion-content>
