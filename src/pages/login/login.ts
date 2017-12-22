@@ -22,7 +22,7 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { email: string, password: string } = {
-    email: 'sharad.kumar@digitaslbi.com',
+    email: 'sharad@sharadtech.com',
     password: 'test'
   };
 
@@ -47,10 +47,19 @@ export class LoginPage {
     });
     loadingObject.present();
     this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.setRoot('DashboardPage', {}, {
-        animate: true,
-        direction: 'forward'
-      });
+      let serverResponse:any = resp;
+      if (serverResponse.data!=null && serverResponse.data.status == "activeNotComplete"){
+        this.navCtrl.setRoot('MyprofilePage', {}, {
+          animate: true,
+          direction: 'forward'
+        });
+      } else {
+        this.navCtrl.setRoot('DashboardPage', {}, {
+          animate: true,
+          direction: 'forward'
+        });
+      }
+
     }, (err) => {
       loadingObject.dismiss();
       // Unable to log in

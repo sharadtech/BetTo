@@ -15,8 +15,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Tutorial', component: 'TutorialPage' },
-    { title: 'Login', component: 'LoginPage' }
+    { i18KEY: 'DASHBOARD_MENUITEM', component: 'DashboardPage' },
+    { i18KEY: 'MYPROFILE_MENUITEM', component: 'MyprofilePage' }
   ]
 
   constructor(private translate: TranslateService,

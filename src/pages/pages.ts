@@ -4,6 +4,7 @@ export const FirstRunPage = 'TutorialPage';
 export const DashboardPage = 'DashboardPage';
 export const LoginPage = 'LoginPage';
 export const SignupPage = 'SignupPage';
+export const MyprofilePage = 'MyprofilePage';
 
 export const Tab1Root = 'HomePage';
 export const Tab2Root = 'BettoPage';
